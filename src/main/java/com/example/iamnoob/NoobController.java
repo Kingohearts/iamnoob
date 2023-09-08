@@ -1,6 +1,7 @@
 package com.example.iamnoob;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,7 +12,7 @@ public class NoobController {
 	NoobService ns;
 	
 	@PostMapping
-	public OutputBean postHandler(InputBean in) {
+	public ResponseEntity<?> postHandler(InputBean in) {
 		
 		return ns.handlePostRequest(in);
 	}
